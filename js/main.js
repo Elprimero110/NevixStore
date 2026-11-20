@@ -194,11 +194,6 @@
   const stickyAddToCartBtn = document.getElementById('sticky-add-to-cart-btn');
   const accAddButtons = document.querySelectorAll('.btn-add-accessory');
 
-  // Menu latéral hamburger
-  const menuToggleBtn = document.getElementById('menu-toggle-btn');
-  const menuDrawerOverlay = document.getElementById('menu-drawer-overlay');
-  const menuDrawerCloseBtn = document.getElementById('menu-drawer-close-btn');
-
   // WhatsApp
   const whatsappLinkBtn = document.getElementById('whatsapp-link-btn');
   const whatsappBubble = document.getElementById('whatsapp-bubble');
@@ -893,60 +888,6 @@ Pouvez-vous me confirmer la disponibilité svp ? Merci !`;
   }
 
   /* ==========================================================================
-     MENU LATÉRAL HAMBURGER
-     ========================================================================== */
-  function openMenuDrawer() {
-    if (menuDrawerOverlay) {
-      menuDrawerOverlay.hidden = false;
-      menuDrawerOverlay.classList.add('is-open');
-      menuDrawerOverlay.style.display = 'flex';
-    }
-    if (menuToggleBtn) menuToggleBtn.setAttribute('aria-expanded', 'true');
-    if (menuDrawerCloseBtn) menuDrawerCloseBtn.focus();
-    document.body.style.overflow = 'hidden';
-    // Push history state so phone back button closes the drawer
-    history.pushState({ drawer: 'menu' }, '');
-  }
-
-  function closeMenuDrawer() {
-    if (menuDrawerOverlay) {
-      menuDrawerOverlay.hidden = true;
-      menuDrawerOverlay.classList.remove('is-open');
-      menuDrawerOverlay.style.display = 'none';
-    }
-    if (menuToggleBtn) {
-      menuToggleBtn.setAttribute('aria-expanded', 'false');
-      menuToggleBtn.focus();
-    }
-    document.body.style.overflow = '';
-  }
-
-  if (menuToggleBtn) menuToggleBtn.addEventListener('click', openMenuDrawer);
-  if (menuDrawerCloseBtn) {
-    menuDrawerCloseBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      closeMenuDrawer();
-    });
-  }
-
-  if (menuDrawerOverlay) {
-    menuDrawerOverlay.addEventListener('click', (e) => {
-      if (e.target === menuDrawerOverlay) {
-        closeMenuDrawer();
-      }
-    });
-  }
-
-  // Fermer le tiroir quand on clique sur un lien du menu
-  const drawerNavLinks = document.querySelectorAll('.drawer-nav-item');
-  drawerNavLinks.forEach((link) => {
-    link.addEventListener('click', () => {
-      closeMenuDrawer();
-    });
-  });
-
-  /* ==========================================================================
      BARRE DE RECHERCHE DÉPLIABLE
      ========================================================================== */
   function openSearchBar() {
@@ -983,6 +924,14 @@ Pouvez-vous me confirmer la disponibilité svp ? Merci !`;
   }
 
   if (searchCloseBtn) searchCloseBtn.addEventListener('click', closeSearchBar);
+
+  // Bouton menu hamburger : inerte (aucun tiroir ni redirection)
+  const menuToggleBtn = document.getElementById('menu-toggle-btn');
+  if (menuToggleBtn) {
+    menuToggleBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+    });
+  }
 
   /* ==========================================================================
      ONGLETS
@@ -1051,9 +1000,6 @@ Pouvez-vous me confirmer la disponibilité svp ? Merci !`;
      ========================================================================== */
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
-      if (menuDrawerOverlay && !menuDrawerOverlay.hidden && menuDrawerOverlay.classList.contains('is-open')) {
-        closeMenuDrawer();
-      }
       if (cartDrawerOverlay && !cartDrawerOverlay.hidden && cartDrawerOverlay.classList.contains('is-open')) {
         closeCartDrawer();
       }
@@ -1123,18 +1069,12 @@ Pouvez-vous me confirmer la disponibilité svp ? Merci !`;
       closeCartDrawer();
       return;
     }
-    // Si le menu est ouvert, le fermer
-    if (menuDrawerOverlay && !menuDrawerOverlay.hidden && menuDrawerOverlay.classList.contains('is-open')) {
-      closeMenuDrawer();
-      return;
-    }
   });
 
   /* ==========================================================================
      INITIALISATION
      ========================================================================== */
   function init() {
-    closeMenuDrawer();
     closeCartDrawer();
     closeSearchBar();
     renderGalleryControls();
