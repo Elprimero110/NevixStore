@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Achetez l'iPhone 14 Pro chez Nevix Store à Cotonou. État Venu certifié, batterie 90 %, garantie 6 mois et livraison rapide en 24 h à Cotonou et Calavi.">
+  <meta name="theme-color" content="#18224B">
+  <title>iPhone 14 Pro | Nevix Store - L'électronique, simplifiée</title>
+
+  <!-- Google Fonts: Inter & Space Grotesk -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Lien d'évitement pour l'accessibilité au clavier -->
+  <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+  <!-- EN-TÊTE DU SITE -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <div class="header-left">
+        <!-- Icône des trois traits du menu (hamburger) à gauche du nom -->
+        <button type="button" class="header-icon-btn menu-toggle-btn" id="menu-toggle-btn" aria-label="Ouvrir le menu de navigation" aria-expanded="false" aria-controls="menu-drawer-overlay">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+        <a href="#" class="brand-logo" aria-label="Nevix Store - Accueil">Nevix Store</a>
+      </div>
+
+      <div class="header-actions">
+        <!-- Bouton recherche sans encadrement -->
+        <button type="button" class="header-icon-btn header-search-btn" id="search-toggle-btn" aria-label="Rechercher un produit" aria-expanded="false" aria-controls="header-search-bar">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+
+        <!-- Vraie icône de panier avec caddie à roulettes et pastille -->
+        <button type="button" class="header-icon-btn cart-btn" id="cart-toggle-btn" aria-label="Panier (0 article)" aria-haspopup="dialog" aria-expanded="false">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="9" cy="21" r="1.5"></circle>
+            <circle cx="19" cy="21" r="1.5"></circle>
+            <path d="M2.5 3h3l2.4 12.2a2 2 0 0 0 2 1.6h8.8a2 2 0 0 0 2-1.6L22.5 7H6.2"></path>
+          </svg>
+          <span class="cart-badge" id="cart-badge" aria-hidden="true">0</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Barre de recherche dépliable -->
+    <div class="header-search-bar" id="header-search-bar" hidden style="display: none;">
+      <div class="container search-bar-inner">
+        <form class="search-form" id="search-form" onsubmit="event.preventDefault();">
+          <label for="search-input" class="sr-only">Rechercher un produit</label>
+          <input type="search" id="search-input" class="search-input" placeholder="Rechercher un iPhone, accessoire, modèle..." autocomplete="off">
+          <button type="button" class="search-close-btn" id="search-close-btn" aria-label="Fermer la recherche">✕</button>
+        </form>
+      </div>
+    </div>
+  </header>
+
+  <!-- MENU LATÉRAL DÉPLIABLE (Hamburger Drawer) -->
+  <div class="menu-drawer-overlay" id="menu-drawer-overlay" hidden style="display: none;">
+    <div class="menu-drawer" id="menu-drawer" role="dialog" aria-modal="true" aria-label="Menu principal">
+      <div class="menu-drawer-header">
+        <span class="drawer-brand-title">Nevix Store</span>
+        <button type="button" class="btn-close-drawer" id="menu-drawer-close-btn" aria-label="Fermer le menu">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <nav class="menu-drawer-nav" aria-label="Navigation secondaire">
+        <ul class="drawer-nav-list">
+          <li><a href="#" class="drawer-nav-item">Accueil</a></li>
+          <li><a href="#" class="drawer-nav-item">Catalogue</a></li>
+          <li class="drawer-divider"></li>
+          <li><a href="#" class="drawer-nav-item active">iPhone 14 Pro <span class="active-pill">Actuel</span></a></li>
+          <li><a href="#" class="drawer-nav-item">iPhone 13</a></li>
+          <li><a href="#" class="drawer-nav-item">iPhone 12</a></li>
+          <li class="drawer-divider"></li>
+          <li><a href="#" class="drawer-nav-item">Accessoires</a></li>
+          <li><a href="https://wa.me/2290151693339" target="_blank" rel="noopener noreferrer" class="drawer-nav-item drawer-wa-item">Contact WhatsApp</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <!-- FIL D'ARIANE / MENU : Accueil - Catalogue - iPhone - iPhone 14 Pro -->
+  <nav class="breadcrumb-nav" aria-label="Fil d'Ariane">
+    <div class="container">
+      <ol class="breadcrumb-list">
+        <li class="breadcrumb-item"><a href="#">Accueil</a></li>
+        <li class="breadcrumb-separator" aria-hidden="true">-</li>
+        <li class="breadcrumb-item"><a href="#">Catalogue</a></li>
+        <li class="breadcrumb-separator" aria-hidden="true">-</li>
+        <li class="breadcrumb-item"><a href="#">iPhone</a></li>
+        <li class="breadcrumb-separator" aria-hidden="true">-</li>
+        <li class="breadcrumb-item current" aria-current="page">iPhone 14 Pro</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- CONTENU PRINCIPAL -->
+  <main id="main-content" class="main-content">
+    <div class="container">
+      
+      <!-- HERO DU PRODUIT (2 colonnes sur écran >= 768px) -->
+      <div class="product-hero">
+        
+        <!-- GALERIE PHOTOS -->
+        <section class="gallery-section" aria-label="Galerie photos de l'iPhone 14 Pro">
+          <div class="gallery-wrapper">
+            <!-- Cadre de la grande image principale -->
+            <div class="gallery-viewport" id="gallery-viewport" tabindex="0" aria-label="Image active du produit. Utilisez les flèches du clavier ou balayez pour changer d'image.">
+              
+              <!-- Badge EN STOCK vert fin dans le coin supérieur gauche -->
+              <div class="badge-stock-promo" id="gallery-stock-badge" aria-label="Produit en stock">EN STOCK</div>
+
+              <!-- Badge Venu dans le coin inférieur droit -->
+              <div class="badge-gallery-state" id="gallery-state-badge" aria-label="État certifié Venu">Venu</div>
+
+              <div class="gallery-frame" id="gallery-frame">
+                <img id="gallery-main-img" 
+                     src="img/noir1.jpg" 
+                     alt="iPhone 14 Pro Noir sidéral" 
+                     width="447" 
+                     height="447" 
+                     class="gallery-img fit-contain"
+                     fetchpriority="high">
+              </div>
+
+              <!-- Boutons précédent / suivant -->
+              <button type="button" class="gallery-nav-arrow prev-arrow" id="gallery-prev-btn" aria-label="Image précédente">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+              <button type="button" class="gallery-nav-arrow next-arrow" id="gallery-next-btn" aria-label="Image suivante">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
+
+            <!-- Points de pagination sous l'image -->
+            <div class="gallery-dots" id="gallery-dots" role="tablist" aria-label="Points de défilement des images">
+              <!-- Rempli dynamiquement en JS -->
+            </div>
+
+            <!-- Bande de miniatures cliquables -->
+            <div class="gallery-thumbnails" id="gallery-thumbnails" role="tablist" aria-label="Miniatures photos">
+              <!-- Rempli dynamiquement en JS -->
+            </div>
+          </div>
+        </section>
+
+        <!-- INFORMATIONS & CONFIGURATION DU PRODUIT -->
+        <section class="product-info-section" aria-label="Informations et configuration">
+          
+          <!-- Ligne Titre + « par Apple » encadré et très discret à droite -->
+          <div class="product-title-row">
+            <h1 class="product-title">iPhone 14 Pro</h1>
+            <span class="brand-badge-discreet">par Apple</span>
+          </div>
+
+          <!-- Ligne Note à gauche + Prix à droite (comme sur la maquette) -->
+          <div class="rating-and-price-row">
+            <a href="#section-avis" class="rating-badge-link" id="rating-jump-link" aria-label="Note 4.5 sur 5 basé sur 320 avis. Aller aux avis.">
+              <!-- Étoile contour orange fin non remplie comme sur la maquette -->
+              <svg class="star-icon-mockup" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#FF5A00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+              <strong class="rating-value-bold">4.5</strong>
+              <span class="rating-count-muted">(320 avis)</span>
+            </a>
+
+            <!-- Prix unique, grand, orange vif, à droite de la note -->
+            <div class="price-value-mockup" id="product-price-display">280&nbsp;000&nbsp;FCFA</div>
+          </div>
+
+          <!-- CONFIGURATEUR : Couleurs, Capacités, Quantité -->
+          <div class="product-selectors-container">
+            
+            <!-- Sélecteur de couleur : 4 pastilles avec indication du nom sélectionné -->
+            <fieldset class="selector-field">
+              <legend class="selector-heading">Couleur : <span class="selected-color-name" id="selected-color-name">Noir sidéral</span></legend>
+              <div class="swatches-row" role="radiogroup" aria-label="Choix de la couleur">
+                <button type="button" 
+                        class="swatch-btn active" 
+                        data-color-key="noir" 
+                        role="radio" 
+                        aria-checked="true" 
+                        aria-label="Noir sidéral"
+                        style="--swatch-color: #1F1F21;">
+                  <span class="swatch-circle"></span>
+                </button>
+                <button type="button" 
+                        class="swatch-btn" 
+                        data-color-key="argent" 
+                        role="radio" 
+                        aria-checked="false" 
+                        aria-label="Argent"
+                        style="--swatch-color: #E4E4E6;">
+                  <span class="swatch-circle has-border"></span>
+                </button>
+                <button type="button" 
+                        class="swatch-btn" 
+                        data-color-key="or" 
+                        role="radio" 
+                        aria-checked="false" 
+                        aria-label="Or"
+                        style="--swatch-color: #F2DFC2;">
+                  <span class="swatch-circle"></span>
+                </button>
+                <button type="button" 
+                        class="swatch-btn" 
+                        data-color-key="violet" 
+                        role="radio" 
+                        aria-checked="false" 
+                        aria-label="Violet intense"
+                        style="--swatch-color: #5B4A86;">
+                  <span class="swatch-circle"></span>
+                </button>
+              </div>
+            </fieldset>
+
+            <!-- Sélecteur de capacité : taille réduite, même aspect que la maquette (sans texte au-dessus) -->
+            <fieldset class="selector-field">
+              <legend class="selector-heading">Capacité</legend>
+              <div class="capacity-buttons-row" role="radiogroup" aria-label="Choix de la capacité">
+                <button type="button" 
+                        class="capacity-btn-mockup active" 
+                        data-capacity="128 Go" 
+                        role="radio" 
+                        aria-checked="true">
+                  128 Go
+                </button>
+                <button type="button" 
+                        class="capacity-btn-mockup" 
+                        data-capacity="256 Go" 
+                        role="radio" 
+                        aria-checked="false">
+                  256 Go
+                </button>
+                <button type="button" 
+                        class="capacity-btn-mockup" 
+                        data-capacity="512 Go" 
+                        role="radio" 
+                        aria-checked="false">
+                  512 Go
+                </button>
+              </div>
+            </fieldset>
+
+            <!-- Sélecteur de quantité : aspect compact capsule de la maquette -->
+            <div class="selector-field">
+              <span class="selector-heading" id="qty-label-text">Quantité</span>
+              <div class="quantity-capsule-mockup" role="group" aria-labelledby="qty-label-text">
+                <button type="button" class="qty-capsule-btn" id="qty-decrement" aria-label="Diminuer la quantité" disabled>−</button>
+                <span class="qty-capsule-val" id="qty-display" aria-live="polite">1</span>
+                <button type="button" class="qty-capsule-btn" id="qty-increment" aria-label="Augmenter la quantité">+</button>
+              </div>
+            </div>
+
+
+            <!-- ÉLÉMENTS DE RÉASSURANCE DISPOSÉS DEUX À DEUX (2 lignes et 2 colonnes) -->
+            <div class="reassurance-model-grid" aria-label="Garanties et services Nevix Store">
+              
+              <!-- 1. Garantie -->
+              <div class="reassurance-model-card">
+                <div class="reassurance-model-icon-box">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    <polyline points="9 12 11 14 15 10"></polyline>
+                  </svg>
+                </div>
+                <div class="reassurance-model-text">
+                  <strong class="reassurance-model-title">Garantie</strong>
+                  <span class="reassurance-model-desc">Garantie 6 mois</span>
+                </div>
+              </div>
+
+              <!-- 2. Livraison -->
+              <div class="reassurance-model-card">
+                <div class="reassurance-model-icon-box">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="1" y="3" width="15" height="13"></rect>
+                    <polygon points="16 8 20 8 23 11 23 16 16 16 8"></polygon>
+                    <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                    <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                  </svg>
+                </div>
+                <div class="reassurance-model-text">
+                  <strong class="reassurance-model-title">Livraison</strong>
+                  <span class="reassurance-model-desc">Livraison en 24 h à Cotonou, Calavi et environs</span>
+                </div>
+              </div>
+
+              <!-- 3. Paiement sécurisé -->
+              <div class="reassurance-model-card">
+                <div class="reassurance-model-icon-box">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                  </svg>
+                </div>
+                <div class="reassurance-model-text">
+                  <strong class="reassurance-model-title">Paiement sécurisé</strong>
+                  <span class="reassurance-model-desc">Paiement par MTN MoMo, Moov Money ou à la livraison</span>
+                </div>
+              </div>
+
+              <!-- 4. Retour -->
+              <div class="reassurance-model-card">
+                <div class="reassurance-model-icon-box">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polyline points="1 4 1 10 7 10"></polyline>
+                    <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+                  </svg>
+                </div>
+                <div class="reassurance-model-text">
+                  <strong class="reassurance-model-title">Retour</strong>
+                  <span class="reassurance-model-desc">Retour possible sous 7 jours si l'appareil n'est pas conforme</span>
+                </div>
+              </div>
+
+            </div>
+</div>
+        </section>
+      </div>
+
+      <!-- ONGLETS DU PRODUIT (Description | Caractéristiques | Questions fréquentes) -->
+      <section class="section-container product-tabs-block" aria-label="Présentation et informations sur le produit">
+        <div class="tabs-clean-container">
+          <!-- Barre d'onglets épurée conforme à la maquette Figma -->
+          <div class="tabs-nav-bar" role="tablist" aria-label="Onglets d'informations">
+            <button type="button" 
+                    class="tab-nav-btn active" 
+                    id="tab-btn-desc" 
+                    role="tab" 
+                    aria-selected="true" 
+                    aria-controls="tab-panel-desc" 
+                    tabindex="0">
+              Description
+            </button>
+            <button type="button" 
+                    class="tab-nav-btn" 
+                    id="tab-btn-specs" 
+                    role="tab" 
+                    aria-selected="false" 
+                    aria-controls="tab-panel-specs" 
+                    tabindex="-1">
+              Caractéristiques
+            </button>
+            <button type="button" 
+                    class="tab-nav-btn" 
+                    id="tab-btn-faq" 
+                    role="tab" 
+                    aria-selected="false" 
+                    aria-controls="tab-panel-faq" 
+                    tabindex="-1">
+              Questions fréquentes
+            </button>
+          </div>
+
+          <div class="tabs-panels-container">
+                          <!-- 1. ONGLET DESCRIPTION (affiché par défaut) -->
+              <div class="tab-panel-content active" id="tab-panel-desc" role="tabpanel" aria-labelledby="tab-btn-desc">
+                <div class="desc-content-wrapper">
+                  <h3 class="desc-main-hook">Offrez-vous le meilleur d'Apple sans payer le prix fort.</h3>
+                  <p class="desc-intro-paragraph">Profitez de toute la puissance de l'iPhone 14 Pro sans payer le prix du neuf. Chaque téléphone est rigoureusement inspecté, nettoyé et testé par nos experts pour vous offrir la fiabilité du neuf, le prix en moins.</p>
+                  
+                  <h4 class="desc-sub-heading">Ce que vous allez adorer au quotidien :</h4>
+                  
+                  <ul class="desc-daily-benefits-list">
+                    <li>
+                      <span class="desc-bullet-dot" aria-hidden="true">•</span>
+                      <div class="desc-benefit-item">
+                        <strong>Des photos et vidéos époustouflantes :</strong> Immortalisez vos moments importants avec un niveau de détail incroyable, de jour comme de nuit.
+                      </div>
+                    </li>
+                    <li>
+                      <span class="desc-bullet-dot" aria-hidden="true">•</span>
+                      <div class="desc-benefit-item">
+                        <strong>Un écran ultra-fluide (120 Hz) :</strong> Naviguez, regardez vos vidéos et jouez à vos jeux préférés sans aucun ralentissement, même en plein soleil.
+                      </div>
+                    </li>
+                    <li>
+                      <span class="desc-bullet-dot" aria-hidden="true">•</span>
+                      <div class="desc-benefit-item">
+                        <strong>Une rapidité sans faille :</strong> Ouvrez vos applications instantanément et passez de l'une à l'autre avec une fluidité totale.
+                      </div>
+                    </li>
+                    <li>
+                      <span class="desc-bullet-dot" aria-hidden="true">•</span>
+                      <div class="desc-benefit-item">
+                        <strong>Une autonomie pensée pour durer :</strong> Utilisez votre téléphone toute la journée en toute sérénité, sans avoir besoin de le recharger constamment.
+                      </div>
+                    </li>
+                    <li>
+                      <span class="desc-bullet-dot" aria-hidden="true">•</span>
+                      <div class="desc-benefit-item">
+                        <strong>Une finition haut de gamme :</strong> Son contour en acier inoxydable et son verre ultra-résistant lui donnent un look élégant et une grande solidité.
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+                            <!-- 2. ONGLET CARACTÉRISTIQUES -->
+              <div class="tab-panel-content" id="tab-panel-specs" role="tabpanel" aria-labelledby="tab-btn-specs" hidden style="display: none;">
+                <!-- Badges État et Batterie sur la même ligne (taille réduite) -->
+                <div class="specs-condition-highlight">
+                  <div class="specs-condition-chip chip-venu">
+                    <strong>État :</strong> Venu
+                  </div>
+                  <div class="specs-condition-chip chip-battery">
+                    <strong>Batterie :</strong> 90 %
+                  </div>
+                </div>
+
+                <ul class="specs-bullet-list">
+                  <li><span class="bullet-dot" aria-hidden="true"></span><span class="spec-text">Écran 6,1 pouces Super Retina XDR OLED, 120 Hz (ProMotion) et affichage permanent</span></li>
+                  <li><span class="bullet-dot" aria-hidden="true"></span><span class="spec-text">Puce A16 Bionic avec GPU 5 cœurs</span></li>
+                  <li><span class="bullet-dot" aria-hidden="true"></span><span class="spec-text">Système photo Pro : principal 48 Mpx, ultra grand-angle 12 Mpx, téléobjectif 12 Mpx</span></li>
+                  <li><span class="bullet-dot" aria-hidden="true"></span><span class="spec-text">Caméra avant TrueDepth 12 Mpx avec mise au point automatique</span></li>
+                  <li><span class="bullet-dot" aria-hidden="true"></span><span class="spec-text">Reconnaissance faciale sécurisée Face ID</span></li>
+                  <li><span class="bullet-dot" aria-hidden="true"></span><span class="spec-text">Dynamic Island pour les alertes et activités en direct</span></li>
+                  <li><span class="bullet-dot" aria-hidden="true"></span><span class="spec-text">Connecteur Lightning (câble de charge inclus)</span></li>
+                  <li><span class="bullet-dot" aria-hidden="true"></span><span class="spec-text">Connectivité 5G ultra rapide</span></li>
+                  <li><span class="bullet-dot" aria-hidden="true"></span><span class="spec-text">Indice de protection IP68 (résistance à l'eau et à la poussière)</span></li>
+                </ul>
+              </div>
+
+              <!-- 3. ONGLET QUESTIONS FRÉQUENTES (FAQ) -->
+            <div class="tab-panel-content" id="tab-panel-faq" role="tabpanel" aria-labelledby="tab-btn-faq" hidden style="display: none;">
+              <div class="faq-accordion-group" id="faq-accordion">
+                
+                <div class="faq-item">
+                  <h3 class="faq-item-title">
+                    <button type="button" class="faq-toggle-btn" id="faq-btn-1" aria-expanded="false" aria-controls="faq-ans-1">
+                      <span>Que signifie « Venu » ?</span>
+                      <svg class="faq-chevron" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                      </svg>
+                    </button>
+                  </h3>
+                  <div class="faq-answer-panel" id="faq-ans-1" role="region" aria-labelledby="faq-btn-1" hidden style="display: none;">
+                    <p>Il s'agit d'un appareil d'occasion importé, rigoureusement testé et nettoyé par Nevix Store avant sa mise en rayon.</p>
+                  </div>
+                </div>
+
+                <div class="faq-item">
+                  <h3 class="faq-item-title">
+                    <button type="button" class="faq-toggle-btn" id="faq-btn-2" aria-expanded="false" aria-controls="faq-ans-2">
+                      <span>La batterie est-elle vraiment à 90 % ?</span>
+                      <svg class="faq-chevron" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                      </svg>
+                    </button>
+                  </h3>
+                  <div class="faq-answer-panel" id="faq-ans-2" role="region" aria-labelledby="faq-btn-2" hidden style="display: none;">
+                    <p>Oui, la capacité maximale de la batterie est mesurée avec précision avant la vente et garantie à 90 %, comme indiqué sur cette fiche.</p>
+                  </div>
+                </div>
+
+                <div class="faq-item">
+                  <h3 class="faq-item-title">
+                    <button type="button" class="faq-toggle-btn" id="faq-btn-3" aria-expanded="false" aria-controls="faq-ans-3">
+                      <span>Puis-je payer à la livraison ?</span>
+                      <svg class="faq-chevron" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                      </svg>
+                    </button>
+                  </h3>
+                  <div class="faq-answer-panel" id="faq-ans-3" role="region" aria-labelledby="faq-btn-3" hidden style="display: none;">
+                    <p>Oui, le paiement à la livraison (en espèces ou par MTN MoMo / Moov Money) est disponible à Cotonou, Calavi et environs.</p>
+                  </div>
+                </div>
+
+                <div class="faq-item">
+                  <h3 class="faq-item-title">
+                    <button type="button" class="faq-toggle-btn" id="faq-btn-4" aria-expanded="false" aria-controls="faq-ans-4">
+                      <span>Puis-je venir voir le téléphone en boutique ?</span>
+                      <svg class="faq-chevron" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                      </svg>
+                    </button>
+                  </h3>
+                  <div class="faq-answer-panel" id="faq-ans-4" role="region" aria-labelledby="faq-btn-4" hidden style="display: none;">
+                    <p>Oui, écrivez-nous sur WhatsApp pour convenir d'un rendez-vous et tester l'appareil directement en main propre.</p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- AVIS CLIENTS (Modèle épuré style Ewari) -->
+      <section class="section-container product-reviews-block" id="section-avis" aria-labelledby="reviews-heading">
+        <div class="reviews-header-row">
+          <h2 id="reviews-heading" class="reviews-title-clean">
+            Avis clients <span class="reviews-count-badge">(320 avis · 4.5/5)</span>
+          </h2>
+        </div>
+
+                  <div class="customer-reviews-list-ewari">
+            <!-- Avis 1 -->
+            <article class="review-card-ewari">
+              <div class="review-header-ewari">
+                <strong class="review-author-name">Kévin A.</strong>
+                <span class="review-date-muted">Il y a 3 jours</span>
+              </div>
+              <div class="review-stars-amber" aria-label="Note : 5 étoiles sur 5">★★★★★</div>
+              <p class="review-quote-text">« J'avais un peu peur d'acheter un téléphone d'occasion, mais je suis bluffé. L'appareil est arrivé sans aucune rayure, parfaitement nettoyé et la batterie tient toute la journée sans problème. Livraison rapide et soignée. »</p>
+              <div class="review-verified-pill">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>Achat vérifié</span>
+              </div>
+            </article>
+
+            <!-- Avis 2 -->
+            <article class="review-card-ewari">
+              <div class="review-header-ewari">
+                <strong class="review-author-name">Catherine D.</strong>
+                <span class="review-date-muted">Il y a 1 semaine</span>
+              </div>
+              <div class="review-stars-amber" aria-label="Note : 4 étoiles sur 5">★★★★☆</div>
+              <p class="review-quote-text">« Le téléphone fonctionne parfaitement et la prise en main a été immédiate. Il y a une toute petite trace d'usure sur le côté comme précisé dans l'annonce, mais une fois la coque mise, on ne voit rien. Je repasserai par cette boutique sans hésiter. »</p>
+              <div class="review-verified-pill">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>Achat vérifié</span>
+              </div>
+            </article>
+
+            <!-- Avis 3 -->
+            <article class="review-card-ewari">
+              <div class="review-header-ewari">
+                <strong class="review-author-name">Junior A.</strong>
+                <span class="review-date-muted">Il y a 2 semaines</span>
+              </div>
+              <div class="review-stars-amber" aria-label="Note : 5 étoiles sur 5">★★★★★</div>
+              <p class="review-quote-text">Super content de cet achat. L'écran est intact et la réactivité est au rendez-vous. J'ai enfin pu reprendre mon jeu préféré "DLS" avec une vraie fluidité d'image, les actions s'enchaînent sans aucun ralentissement. La batterie tient bien le choc même en session de jeu. Je valide !</p>
+              <div class="review-verified-pill">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>Achat vérifié</span>
+              </div>
+            </article>
+          </div>
+      </section>
+
+      <!-- SECTION « VOUS AIMERIEZ AUSSI » -->
+      <section class="section-container accessories-section" aria-labelledby="accessories-heading">
+        <div class="card-box">
+          <h2 id="accessories-heading" class="section-heading accessories-heading-centered">Vous aimeriez aussi</h2>
+          
+          <div class="accessories-grid">
+            <article class="accessory-item-card" data-acc-id="coque-silicone">
+              <div class="accessory-img-container">
+                <img src="img/accessoire-coque-silicone.webp" 
+                     alt="Coque en silicone protectrice" 
+                     width="340" 
+                     height="340" 
+                     loading="lazy" 
+                     class="accessory-img">
+              </div>
+              <div class="accessory-details">
+                <h3 class="accessory-title">Coque en silicone</h3>
+                <p class="accessory-price-tag">2&nbsp;500&nbsp;FCFA</p>
+              </div>
+              <button type="button" class="btn-add-accessory" data-acc-id="coque-silicone" aria-label="Ajouter la Coque en silicone au panier">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+                <span>Ajouter</span>
+              </button>
+            </article>
+
+            <article class="accessory-item-card" data-acc-id="chargeur-20w">
+              <div class="accessory-img-container">
+                <img src="img/accessoire-chargeur-20w.webp" 
+                     alt="Chargeur secteur rapide USB-C 20 W" 
+                     width="800" 
+                     height="1200" 
+                     loading="lazy" 
+                     class="accessory-img">
+              </div>
+              <div class="accessory-details">
+                <h3 class="accessory-title">Chargeur rapide 20 W</h3>
+                <p class="accessory-price-tag">8&nbsp;000&nbsp;FCFA</p>
+              </div>
+              <button type="button" class="btn-add-accessory" data-acc-id="chargeur-20w" aria-label="Ajouter le Chargeur rapide 20 W au panier">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+                <span>Ajouter</span>
+              </button>
+            </article>
+
+            <article class="accessory-item-card" data-acc-id="airpods-3">
+              <div class="accessory-img-container">
+                <img src="img/accessoire-airpods-3.webp" 
+                     alt="Écouteurs sans fil AirPods 3" 
+                     width="800" 
+                     height="1200" 
+                     loading="lazy" 
+                     class="accessory-img">
+              </div>
+              <div class="accessory-details">
+                <h3 class="accessory-title">AirPods 3</h3>
+                <p class="accessory-price-tag">15&nbsp;000&nbsp;FCFA</p>
+              </div>
+              <button type="button" class="btn-add-accessory" data-acc-id="airpods-3" aria-label="Ajouter les AirPods 3 au panier">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+                <span>Ajouter</span>
+              </button>
+            </article>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- PIED DE PAGE (Modèle exact de pied_de_page.jpeg) -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <div class="footer-brand-title">Nevix Store.</div>
+      <p class="footer-slogan">L'électronique, simplifiée.</p>
+
+      <div class="footer-social-row" aria-label="Réseaux sociaux">
+        <a href="#" class="social-round-pill" aria-label="TikTok Nevix Store">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.88 2.89 2.89 0 0 1-2.89-2.88 2.89 2.89 0 0 1 2.89-2.89c.33 0 .64.06.94.15V9.41a6.34 6.34 0 0 0-.94-.08 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.33 6.34 6.34 0 0 0 6.34-6.33V8.89a8.17 8.17 0 0 0 4.76 1.52v-3.4a4.85 4.85 0 0 1-1-.32z"/>
+          </svg>
+        </a>
+
+        <a href="#" class="social-round-pill" aria-label="Instagram Nevix Store">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+        </a>
+
+        <a href="#" class="social-round-pill" aria-label="Facebook Nevix Store">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+            <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/>
+          </svg>
+        </a>
+      </div>
+
+      <div class="footer-columns-grid">
+        <div class="footer-block">
+          <h3 class="footer-block-heading">INFORMATIONS</h3>
+          <ul class="footer-nav-list">
+            <li><a href="#" class="footer-link">À Propos</a></li>
+            <li><a href="#" class="footer-link">Conditions Générales (CGU)</a></li>
+            <li><a href="#" class="footer-link">Livraison et retours</a></li>
+            <li><a href="https://wa.me/2290151693339" target="_blank" rel="noopener noreferrer" class="footer-link">Contact WhatsApp</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-block">
+          <h3 class="footer-block-heading">NOUS CONTACTER</h3>
+          <ul class="footer-nav-list contact-list">
+            <li><a href="tel:+2290151693339" class="footer-link">+229 01 51 69 33 39</a></li>
+            <li><a href="mailto:contact@nevixstore.example" class="footer-link">contact@nevixstore.example</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom-line">
+        <p>© 2026 Nevix Store. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ÉLÉMENTS FLOTTANTS -->
+
+  <!-- WhatsApp flottant -->
+  <div class="floating-whatsapp-wrapper" id="floating-whatsapp-wrapper">
+    <div class="whatsapp-chat-bubble" id="whatsapp-bubble" role="status">
+      <span>Une question ? Écrivez-nous</span>
+    </div>
+    <a href="https://wa.me/2290151693339?text=Bonjour%20Nevix%20Store%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20l%27iPhone%2014%20Pro%20(Noir%20sid%C3%A9ral%2C%20128%20Go%2C%20%C3%A9tat%20Venu).%20Pouvez-vous%20me%20donner%20plus%20d%27informations%20%3F" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="floating-whatsapp-btn" 
+       id="whatsapp-link-btn" 
+       aria-label="Discuter avec Nevix Store sur WhatsApp">
+      <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true">
+        <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.4-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.38-.44.13-.15.17-.25.25-.42.08-.17.04-.32-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.4-.42-.56-.43h-.47c-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.07s.89 2.4 1.01 2.57c.13.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.53.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.12-.22-.19-.47-.31z"/>
+      </svg>
+    </a>
+  </div>
+
+  <!-- Barre d'achat fixée en bas -->
+  <aside class="fixed-bottom-bar" id="fixed-bottom-bar" aria-label="Barre d'achat immédiate">
+    <div class="container bottom-bar-inner">
+      <div class="bottom-bar-pricing">
+        <div class="bottom-bar-label">Total</div>
+        <div class="bottom-bar-total" id="bottom-bar-total">280&nbsp;000&nbsp;FCFA</div>
+      </div>
+      <button type="button" class="btn-buy-cta sticky-buy-button" id="sticky-add-to-cart-btn" aria-label="Ajouter au panier l'iPhone 14 Pro">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="9" cy="21" r="1.5"></circle>
+          <circle cx="19" cy="21" r="1.5"></circle>
+          <path d="M2.5 3h3l2.4 12.2a2 2 0 0 0 2 1.6h8.8a2 2 0 0 0 2-1.6L22.5 7H6.2"></path>
+        </svg>
+        <span>Ajouter au panier</span>
+      </button>
+    </div>
+  </aside>
+
+    <!-- TIROIR MINI-PANIER (Professionnel et interactif) -->
+  <div class="cart-drawer-overlay" id="cart-drawer-overlay" hidden style="display: none;">
+    <div class="cart-drawer" id="cart-drawer" role="dialog" aria-modal="true" aria-labelledby="drawer-cart-title">
+      
+      <!-- VUE 1 : ARTICLES DU PANIER -->
+      <div class="cart-drawer-view active" id="cart-view-items">
+        <div class="cart-drawer-header">
+          <h2 id="drawer-cart-title" class="drawer-title">Mon Panier (<span id="drawer-items-count">0</span>)</h2>
+          <button type="button" class="btn-close-drawer" id="cart-drawer-close-btn" aria-label="Fermer le panier">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+
+        <div class="cart-drawer-items-list" id="cart-drawer-items-list">
+          <!-- Rempli en direct par JS -->
+        </div>
+
+        <div class="cart-drawer-footer" id="cart-drawer-footer">
+          <div class="cart-delivery-banner">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="1" y="3" width="15" height="13"></rect>
+              <polygon points="16 8 20 8 23 11 23 16 16 16 8"></polygon>
+              <circle cx="5.5" cy="18.5" r="2.5"></circle>
+              <circle cx="18.5" cy="18.5" r="2.5"></circle>
+            </svg>
+            <span>Livraison express offerte à Cotonou et Calavi</span>
+          </div>
+
+          <div class="cart-subtotal-row">
+            <span class="subtotal-label">Total :</span>
+            <strong class="subtotal-amount" id="drawer-subtotal">0&nbsp;FCFA</strong>
+          </div>
+
+          <button type="button" class="btn-checkout-primary" id="btn-open-checkout">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+            <span>Valider la commande</span>
+          </button>
+
+          <a href="#" class="btn-checkout-whatsapp" id="btn-checkout-whatsapp" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+              <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.4-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.38-.44.13-.15.17-.25.25-.42.08-.17.04-.32-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.4-.42-.56-.43h-.47c-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.07s.89 2.4 1.01 2.57c.13.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.53.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.12-.22-.19-.47-.31z"/>
+            </svg>
+            <span>Commander directement sur WhatsApp</span>
+          </a>
+
+          <div class="cart-reassurance-micro">
+            <span>🔒 Paiement sécurisé</span> · <span>⚡ Livraison 24h</span> · <span>🛡️ Garantie 6 mois</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- VUE 2 : FORMULAIRE DE COMMANDE DIRECTE -->
+      <div class="cart-drawer-view" id="cart-view-checkout" style="display: none;">
+        <div class="cart-drawer-header">
+          <button type="button" class="btn-back-to-cart" id="btn-back-to-cart" aria-label="Retour au panier">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="19" y1="12" x2="5" y2="12"></line>
+              <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            <span>Panier</span>
+          </button>
+          <h2 class="drawer-title">Finaliser la commande</h2>
+          <button type="button" class="btn-close-drawer" id="cart-checkout-close-btn" aria-label="Fermer">✕</button>
+        </div>
+
+        <form class="checkout-form-container" id="checkout-order-form">
+          <div class="checkout-summary-mini">
+            <span class="checkout-recap-title">Montant total :</span>
+            <strong class="checkout-recap-amount" id="checkout-total-display">0&nbsp;FCFA</strong>
+          </div>
+
+          <div class="form-group">
+            <label for="order-fullname">Nom et prénom <span class="required">*</span></label>
+            <input type="text" id="order-fullname" class="checkout-input" placeholder="Ex : Médard Tossou" required autocomplete="name">
+          </div>
+
+          <div class="form-group">
+            <label for="order-phone">Numéro Téléphone / WhatsApp <span class="required">*</span></label>
+            <input type="tel" id="order-phone" class="checkout-input" placeholder="Ex : +229 01 51 69 33 39" required autocomplete="tel">
+          </div>
+
+          <div class="form-group">
+            <label for="order-address">Ville & Quartier de livraison <span class="required">*</span></label>
+            <input type="text" id="order-address" class="checkout-input" placeholder="Ex : Cotonou, Haie Vive (près pharmacie)" required autocomplete="street-address">
+          </div>
+
+          <div class="form-group">
+            <label class="payment-methods-label">Mode de règlement <span class="required">*</span></label>
+            <div class="payment-options-grid">
+              <label class="payment-option-card">
+                <input type="radio" name="order-payment" value="À la livraison" checked>
+                <div class="payment-card-content">
+                  <span class="payment-icon">💵</span>
+                  <div class="payment-info">
+                    <strong>Paiement à la livraison</strong>
+                    <span>Espèces lors de la remise</span>
+                  </div>
+                </div>
+              </label>
+
+              <label class="payment-option-card">
+                <input type="radio" name="order-payment" value="MTN MoMo">
+                <div class="payment-card-content">
+                  <span class="payment-icon">📱</span>
+                  <div class="payment-info">
+                    <strong>MTN Mobile Money</strong>
+                    <span>Paiement MoMo sécurisé</span>
+                  </div>
+                </div>
+              </label>
+
+              <label class="payment-option-card">
+                <input type="radio" name="order-payment" value="Moov Money">
+                <div class="payment-card-content">
+                  <span class="payment-icon">📲</span>
+                  <div class="payment-info">
+                    <strong>Moov Money</strong>
+                    <span>Paiement Moov sécurisé</span>
+                  </div>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <div class="checkout-form-footer">
+            <button type="submit" class="btn-checkout-primary" id="btn-submit-order">
+              <span>Confirmer ma commande</span>
+            </button>
+            <p class="checkout-security-notice">🔒 Vos informations sont confidentielles et utilisées uniquement pour votre livraison.</p>
+          </div>
+        </form>
+      </div>
+
+      <!-- VUE 3 : CONFIRMATION COMMANDE RÉUSSIE -->
+      <div class="cart-drawer-view" id="cart-view-success" style="display: none;">
+        <div class="order-success-screen">
+          <div class="order-success-icon-wrap">
+            <svg viewBox="0 0 24 24" width="44" height="44" fill="none" stroke="#16A34A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+          </div>
+          <h2 class="order-success-title">Commande confirmée !</h2>
+          <div class="order-ref-badge" id="order-ref-display">Réf : #NVX-84920</div>
+          
+          <p class="order-success-desc">
+            Merci pour votre commande. Notre équipe Nevix Store vous contactera au numéro renseigné dans un délai de 15 minutes pour confirmer l'horaire précis de votre livraison en 24h.
+          </p>
+
+          <div class="order-success-actions">
+            <a href="#" class="btn-checkout-whatsapp" id="btn-success-whatsapp" target="_blank" rel="noopener noreferrer">
+              <span>Envoyer le récapitulatif sur WhatsApp</span>
+            </a>
+            <button type="button" class="btn-continue-shopping" id="btn-order-finish">
+              <span>Continuer mes achats</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- TOAST DE CONFIRMATION -->
+  <div class="toast-popup" id="toast-popup" role="status" aria-live="polite" hidden style="display: none;">
+    <div class="toast-content">
+      <svg class="toast-check-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+      </svg>
+      <span class="toast-msg" id="toast-msg">Produit ajouté au panier</span>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
