@@ -552,16 +552,6 @@
     }, 3200);
   }
 
-  // Bulle WhatsApp temporaire (4 secondes)
-  if (whatsappBubble) {
-    setTimeout(() => {
-      whatsappBubble.classList.add('fade-out');
-      setTimeout(() => {
-        whatsappBubble.style.display = 'none';
-      }, 400);
-    }, 4000);
-  }
-
   /* ==========================================================================
      AJOUT AU PANIER ET MINI-PANIER (DRAWER)
      ========================================================================== */
@@ -797,6 +787,8 @@ Pouvez-vous me confirmer la disponibilité svp ? Merci !`;
     if (cartToggleBtn) cartToggleBtn.setAttribute('aria-expanded', 'true');
     if (cartDrawerCloseBtn) cartDrawerCloseBtn.focus();
     document.body.style.overflow = 'hidden';
+    // Push history state so phone back button closes the drawer
+    history.pushState({ drawer: 'cart' }, '');
   }
 
   function closeCartDrawer() {
@@ -912,6 +904,8 @@ Pouvez-vous me confirmer la disponibilité svp ? Merci !`;
     if (menuToggleBtn) menuToggleBtn.setAttribute('aria-expanded', 'true');
     if (menuDrawerCloseBtn) menuDrawerCloseBtn.focus();
     document.body.style.overflow = 'hidden';
+    // Push history state so phone back button closes the drawer
+    history.pushState({ drawer: 'menu' }, '');
   }
 
   function closeMenuDrawer() {
@@ -1071,9 +1065,18 @@ Pouvez-vous me confirmer la disponibilité svp ? Merci !`;
 
   /* ==========================================================================
      BARRE D'ACHAT DYNAMIQUE (Arrêt au niveau du pied de page / après accessoires)
+     + BOUTON WHATSAPP FLOTTANT (visible uniquement près du pied de page)
      ========================================================================== */
   const fixedBottomBar = document.getElementById('fixed-bottom-bar');
   const footerElement = document.querySelector('.site-footer');
+  const floatingWhatsApp = document.querySelector('.floating-whatsapp-wrapper');
+
+  function showFloatingWhatsApp() {
+    if (floatingWhatsApp) floatingWhatsApp.classList.add('is-visible');
+  }
+  function hideFloatingWhatsApp() {
+    if (floatingWhatsApp) floatingWhatsApp.classList.remove('is-visible');
+  }
 
   if (fixedBottomBar && footerElement) {
     if ('IntersectionObserver' in window) {
@@ -1082,9 +1085,11 @@ Pouvez-vous me confirmer la disponibilité svp ? Merci !`;
           if (entry.isIntersecting) {
             fixedBottomBar.classList.add('is-hidden');
             document.body.classList.add('bottom-bar-hidden');
+            showFloatingWhatsApp();
           } else {
             fixedBottomBar.classList.remove('is-hidden');
             document.body.classList.remove('bottom-bar-hidden');
+            hideFloatingWhatsApp();
           }
         });
       }, {
@@ -1099,13 +1104,31 @@ Pouvez-vous me confirmer la disponibilité svp ? Merci !`;
         if (footerRect.top <= window.innerHeight) {
           fixedBottomBar.classList.add('is-hidden');
           document.body.classList.add('bottom-bar-hidden');
+          showFloatingWhatsApp();
         } else {
           fixedBottomBar.classList.remove('is-hidden');
           document.body.classList.remove('bottom-bar-hidden');
+          hideFloatingWhatsApp();
         }
       }, { passive: true });
     }
   }
+
+  /* ==========================================================================
+     BOUTON RETOUR DU TÉLÉPHONE : ferme le drawer au lieu de quitter la page
+     ========================================================================== */
+  window.addEventListener('popstate', (e) => {
+    // Si le panier est ouvert, le fermer
+    if (cartDrawerOverlay && !cartDrawerOverlay.hidden && cartDrawerOverlay.classList.contains('is-open')) {
+      closeCartDrawer();
+      return;
+    }
+    // Si le menu est ouvert, le fermer
+    if (menuDrawerOverlay && !menuDrawerOverlay.hidden && menuDrawerOverlay.classList.contains('is-open')) {
+      closeMenuDrawer();
+      return;
+    }
+  });
 
   /* ==========================================================================
      INITIALISATION
